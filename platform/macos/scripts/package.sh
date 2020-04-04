@@ -32,7 +32,7 @@ if [[ ! -z "${CI:=}" ]]; then
 fi
 
 step "Building dynamic framework (build ${PROJ_VERSION}, version ${SEM_VERSION})…"
-defaults write com.apple.Xcode PBXNumberOfParallelBuildSubtasks 4
+defaults write com.apple.Xcode PBXNumberOfParallelBuildSubtasks 8
 xcodebuild \
     CURRENT_PROJECT_VERSION=${PROJ_VERSION} \
     CURRENT_SHORT_VERSION=${SHORT_VERSION} \
