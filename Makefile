@@ -145,7 +145,7 @@ $(IOS_USER_DATA_PATH)/WorkspaceSettings.xcsettings: platform/ios/WorkspaceSettin
 .PHONY: ios
 ios: $(IOS_PROJ_PATH)
 	set -o pipefail && $(IOS_XCODEBUILD_SIM) -scheme 'CI' build $(XCPRETTY)
-
+	defaults write com.apple.Xcode PBXNumberOfParallelBuildSubtasks 6
 .PHONY: iproj
 iproj: $(IOS_PROJ_PATH)
 	xed $(IOS_WORK_PATH)
